@@ -1,4 +1,4 @@
-package encapsulation;
+package encaptulation.example1;
 
 import org.junit.jupiter.api.Test;
 

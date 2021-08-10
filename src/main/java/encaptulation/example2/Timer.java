@@ -1,4 +1,4 @@
-package encapsulation2;
+package encaptulation.example2;
 
 import java.time.Duration;
 import java.time.LocalDateTime;

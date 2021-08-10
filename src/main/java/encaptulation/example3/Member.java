@@ -1,4 +1,4 @@
-package encaptulation3;
+package encaptulation.example3;
 
 public class Member {
 
