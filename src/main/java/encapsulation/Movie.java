@@ -8,7 +8,10 @@ public class Movie {
         this.movieType = movieType;
     }
 
-    public boolean isNewRelease() {
-        return movieType == MovieType.NEW_RELEASE;
+    public int getFrequentRenterPoints(int daysRented) {
+        if (movieType == MovieType.NEW_RELEASE && daysRented > 1) {
+            return 2;
+        }
+        return 1;
     }
 }

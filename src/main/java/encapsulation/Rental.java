@@ -11,13 +11,6 @@ public class Rental {
     }
 
     public int getFrequentRenterPoints() {
-        if (movie.isNewRelease() && isDaysRentedMoreThanOneDay()) {
-            return 2;
-        }
-        return 1;
-    }
-
-    private boolean isDaysRentedMoreThanOneDay() {
-        return daysRented > 1;
+        return movie.getFrequentRenterPoints(daysRented);
     }
 }

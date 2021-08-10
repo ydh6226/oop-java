@@ -7,26 +7,41 @@ import static org.assertj.core.api.Assertions.assertThat;
 class MovieTest {
 
     @Test
-    public void isNewRelease() throws Exception {
+    public void getFrequentRenterPoints_NewReleaseAndMoreThanOneDay() throws Exception {
         //given
         Movie movie = new Movie(MovieType.NEW_RELEASE);
+        int daysRented = 10;
 
         //when
-        boolean newRelease = movie.isNewRelease();
+        int frequentRenterPoints = movie.getFrequentRenterPoints(daysRented);
 
         //then
-        assertThat(newRelease).isTrue();
+        assertThat(frequentRenterPoints).isEqualTo(2);
     }
 
     @Test
-    public void isNewRelease_NonNewRelease() throws Exception {
+    public void getFrequentRenterPoints_NewReleaseAndLessThanOneDay() throws Exception {
         //given
-        Movie movie = new Movie(MovieType.REGULAR);
+        Movie movie = new Movie(MovieType.NEW_RELEASE);
+        int daysRented = 1;
 
         //when
-        boolean newRelease = movie.isNewRelease();
+        int frequentRenterPoints = movie.getFrequentRenterPoints(daysRented);
 
         //then
-        assertThat(newRelease).isFalse();
+        assertThat(frequentRenterPoints).isEqualTo(1);
+    }
+
+    @Test
+    public void getFrequentRenterPoints_RegularAndMoreThanOneDay() throws Exception {
+        //given
+        Movie movie = new Movie(MovieType.REGULAR);
+        int daysRented = 10;
+
+        //when
+        int frequentRenterPoints = movie.getFrequentRenterPoints(daysRented);
+
+        //then
+        assertThat(frequentRenterPoints).isEqualTo(1);
     }
 }
