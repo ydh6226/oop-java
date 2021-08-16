@@ -1,4 +1,4 @@
-package separation;
+package separation.example1;
 
 import lombok.RequiredArgsConstructor;
 
